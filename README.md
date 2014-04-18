@@ -1,4 +1,4 @@
-rails-bootstrap-haml-sass
+interview-assistant
 =========================
 
-template
+"Visually track your interview progress".
