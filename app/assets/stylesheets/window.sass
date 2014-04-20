@@ -1,0 +1,36 @@
+@import css3_mixins
+
+.window
+	padding: 		10px
+	padding-bottom: 15px
+	margin: 20px
+	border: 1px solid #ddd
+	border-radius: 3px
+	@include css3-box-shadow(0, 2px, 1px, rgba(180,180,180,0.3))
+
+	.title
+		width: 100%
+		height: 30px
+		font-size: 1.2em
+		font-family: "Lato"
+		margin-bottom: 6px
+		color: #fff
+
+		.danger-bar
+			width: 100%
+			height: 40px
+			position: absolute
+			left: 0
+			top: 0px
+			z-index: -1
+
+	.body
+		font-family: "Open Sans"
+		width: 100%
+
+		.row
+			padding-left:  11px
+			padding-right: 11px
+
+
+

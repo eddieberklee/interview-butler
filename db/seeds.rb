@@ -7,17 +7,16 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 def randomSequentialDates(length)
-	startDate = '1/10/14'
-	startDate = Date.strptime(startDate, "%m/%d/%y")
 
-	endDate = '4/18/14'
-	endDate = Date.strptime(endDate, "%m/%d/%y")
+	randomSpread = 3
+	startDate = (Time.now.to_date - (length*randomSpread/2).days)
+	endDate = Time.now.to_date
 	
 	dates = []
 	currDate = startDate
 
 	for i in (0..length) do
-		currDate = currDate + Random.rand(4)
+		currDate = currDate + Random.rand(randomSpread)
 		dates.push( currDate.strftime("%m/%d/%y") )
 	end
 	

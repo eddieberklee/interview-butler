@@ -1,9 +1,10 @@
-%h1 Main#index
-%p Find me in app/views/main/index.html.haml
 
 
+%h1
+	Companies#Index
 
-.form-window.col-sm-2
+
+.form-window.window.col-sm-2
 	= form_for @company, url: {action: "create"}, role: "form" do |f|
 		.form-group.center
 			.input-group.col-sm-12
@@ -20,7 +21,69 @@
 
 		.clear
 
-- @companies.each do |c|
-	= c.name
-	= c.dateApplied
+%ul.pagination.pagination-lg#change-size
+	%li.2
+		%a{href: ""}
+			2
+	%li.3
+		%a{href: ""}
+			3
+	%li.4
+		%a{href: ""}
+			4
+	%li.5
+		%a{href: ""}
+			5
+	%li.6
+		%a{href: ""}
+			6
 
+- @companies.each_with_index do |c,i|
+	.company.window.col-sm-4
+		.title
+			= c.name
+			.danger-bar{class: "#{@colors[i]}-bg"}
+		.body
+
+			.row
+				%span.smallcaps
+					Applied:
+				
+				- month, day = c.dateApplied.split("/")
+				- month = @months[month.to_i]
+				
+				= month.slice(0,3)
+				= day
+				
+				%div.faded{style: "float:right;margin-right:-5px;"}
+					%span{:class => "#{@dateAppliedColors[i]}-color"}
+						= @dateAppliedDiffs[i]
+						%span.smallcaps{style: "font-size:0.6em;"}
+							dayS
+
+			.h10
+			.row
+				.btn-group.hideme
+					%button.btn.btn-default.dropdown-toggle{type: "button", "data-toggle" => "dropdown"}
+						= "Log"
+						%span.caret
+					%ul.dropdown-menu{role: "menu"}
+						%li
+							%a{href: ""}
+								1st Round
+						%li
+							%a{href: ""}
+								2nd Round
+						%li
+							%a{href: ""}
+								On-Site Round
+						%li.divider
+						%li
+							%a{href: ""}
+								Additional Round
+						%li
+							%a{href: ""}
+								Offer Letter
+
+
+			
