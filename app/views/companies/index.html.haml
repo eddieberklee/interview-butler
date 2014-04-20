@@ -1,0 +1,26 @@
+%h1 Main#index
+%p Find me in app/views/main/index.html.haml
+
+
+
+.form-window.col-sm-2
+	= form_for @company, url: {action: "create"}, role: "form" do |f|
+		.form-group.center
+			.input-group.col-sm-12
+				= f.text_field(:name, class: "form-control", placeholder: "")
+			= f.label(:name, "Company Name")
+
+		.form-group.center
+			.input-group.col-sm-12
+				= f.text_field(:dateApplied, class: "form-control", placeholder: "")
+			= f.label(:dateApplied, "Date Applied")
+
+		.form-group
+			= f.submit("Track!", class: "btn btn-default col-sm-offset-2 col-sm-8", style: "margin-top:5px;margin-bottom:0px;")
+
+		.clear
+
+- @companies.each do |c|
+	= c.name
+	= c.dateApplied
+

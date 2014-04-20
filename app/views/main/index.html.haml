@@ -1,11 +1,25 @@
 %h1 Main#index
 %p Find me in app/views/main/index.html.haml
-Company:
-Date:
-.input-group
-  %input.form-control{:type => "text"}
-  %span.input-group-addon
-    m/d/y
 
 
+
+.form-window.col-sm-2
+	= form_for @company, url: {action: "create"}, role: "form" do |f|
+		.form-group.center
+			.input-group.col-sm-12
+				= text_field_tag(:name, nil, class: "form-control", placeholder: "")
+			= label_tag(:name, "Company Name")
+
+		.form-group.center
+			.input-group.col-sm-12
+				= text_field_tag(:dateApplied, nil, class: "form-control", placeholder: "")
+			= label_tag(:dateApplied, "Date Applied")
+
+		.form-group
+			= submit_tag("Track!", class: "btn btn-default col-sm-offset-2 col-sm-8", style: "margin-top:5px;margin-bottom:0px;")
+
+		.clear
+
+
+= @companies
 
