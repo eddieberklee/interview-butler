@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  detail: MyText
+  expectation: false
+  actual: false
+
+two:
+  detail: MyText
+  expectation: false
+  actual: false
