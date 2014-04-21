@@ -1,0 +1,39 @@
+@import css3_mixins
+
+.timeline
+	width: 100%
+	position: relative
+
+	.main-line
+		width: 1px
+		height: 100%
+		margin-left: 10px
+		background-color: #aaa
+
+	.event
+		.marker
+			width: 8px
+			height: 8px
+			border-radius: 4px
+			border: 1px solid #aaa
+			background-color: #fff
+			float: left
+			margin-top: 6px
+			margin-left: 1px
+			
+			.dot
+				width: 4px
+				height: 4px
+				border-radius: 2px
+				background-color: #aaa
+				margin-top: 1px
+				margin-left: 1px
+				float: left
+		span
+			margin-left: 4px
+			float: left
+
+	.events
+		position: relative
+		top: 2px
+		left: 5px
